@@ -56,7 +56,7 @@ require("lazy").setup({
       local noice = require("noice").api.status
       require('lualine').setup({
         options = {
-          theme = "tokyonight-storm",
+          theme = "auto",
           globalstatus = true,
         },
         sections = {
@@ -106,7 +106,7 @@ require("lazy").setup({
     config = function()
       require("catppuccin").setup({
         flavour = "mocha", -- latte, frappe, macchiato, mocha
-        transparent_background = false,
+        transparent_background = true,
         integrations = {
           nvimtree = true,
           telescope = true,
@@ -252,4 +252,10 @@ vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>")
 
 vim.keymap.set("n", "<leader>ls", ":LiveServerStart<CR>")
 vim.keymap.set("n", "<leader>le", ":LiveServerStop<CR>")
+
+------------------------------------------------
+-- Relative Line Number Highlighting
+------------------------------------------------
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "Cyan" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "Cyan" })
 
